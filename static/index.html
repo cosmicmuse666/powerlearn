@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Mentor Agent</title>
+</head>
+<body>
+    <h1>Project Mentor Agent</h1>
+    <form id="suggestion-form">
+        <label for="interest">Interest:</label>
+        <input type="text" id="interest" name="interest" required>
+        <br><br>
+        <label for="skill-level">Skill Level:</label>
+        <select id="skill-level" name="skill-level" required>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+        <br><br>
+        <label for="language">Language:</label>
+        <select id="language" name="language">
+            <option value="">Any</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+        </select>
+        <br><br>
+        <button type="submit">Get Suggestions</button>
+    </form>
+    <hr>
+    <h2>Suggestions:</h2>
+    <pre id="results"></pre>
+
+    <script>
+        document.getElementById('suggestion-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const interest = document.getElementById('interest').value;
+            const skillLevel = document.getElementById('skill-level').value;
+            const language = document.getElementById('language').value;
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.textContent = 'Loading...';
+
+            let url = `/suggest?interest=${interest}&skill_level=${skillLevel}`;
+            if (language) {
+                url += `&language=${language}`;
+            }
+
+            const response = await fetch(url);
+            const data = await response.json();
+            resultsDiv.textContent = data.suggestions;
+        });
+    </script>
+</body>
+</html>

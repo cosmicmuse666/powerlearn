@@ -1,0 +1,26 @@
+{
+    "web development": [
+        {
+            "title": "freeCodeCamp Responsive Web Design",
+            "url": "https://www.freecodecamp.org/learn/responsive-web-design/",
+            "description": "A comprehensive course covering HTML, CSS, and responsive design principles."
+        },
+        {
+            "title": "MDN Web Docs: JavaScript",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            "description": "The official Mozilla documentation for JavaScript, a vital resource for any web developer."
+        }
+    ],
+    "machine learning": [
+        {
+            "title": "Coursera: Machine Learning by Andrew Ng",
+            "url": "https://www.coursera.org/learn/machine-learning",
+            "description": "A foundational course in machine learning, taught by a leading expert in the field."
+        },
+        {
+            "title": "TensorFlow Documentation",
+            "url": "https://www.tensorflow.org/tutorials",
+            "description": "Official tutorials for TensorFlow, a popular machine learning library."
+        }
+    ]
+}
